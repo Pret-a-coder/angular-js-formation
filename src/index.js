@@ -8,7 +8,8 @@ require('./routes/main/main.controller')
 module.config(function ($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: '/templates/main.view.html',
-    controller: 'MainController'
+    controller: 'MainController',
+    controllerAs: 'main'
   })
 })
 

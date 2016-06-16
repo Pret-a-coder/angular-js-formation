@@ -28,7 +28,7 @@
         </div>
         <div class="panel-body">
             <div style="height:400px; width:100%;">
-                <p ng-repeat="message in messages">
+                <p ng-repeat="message in main.messages">
                     {{message}}
                 </p>
 
@@ -37,9 +37,9 @@
             <form>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Type your message here..."
-                           ng-model="newMessage">
+                           ng-model="main.newMessage">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit" ng-click="sendMessage()">Send</button>
+                    <button class="btn btn-default" type="submit" ng-click="main.sendMessage()">Send</button>
                 </span>
                 </div>
             </form>
