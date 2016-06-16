@@ -18,7 +18,7 @@ module.exports = {
     ],
     // directory: true,
     routes: {
-      '/bower_components': 'bower_components',
+      '/templates': 'src/templates',
       '/dist': 'dist'
     }
   },
@@ -31,13 +31,10 @@ module.exports = {
   },
   files: [
     './dist/**/*.js',
-    './dist/**/*.html',
+    './src/templates/**/*.html',
     'index.html'
   ],
   injectChanges: true,
-  // logFileChanges: true,
-  // logLevel: 'debug',
-  // logPrefix: 'gulp-patterns',
   notify: false,
   reloadDelay: 1000,
   open: false,
