@@ -27,9 +27,12 @@
             <h3 class="panel-title">Chat</h3>
         </div>
         <div class="panel-body">
-            <textarea style="height:400px; width:100%;" readonly="true">
-                {{messages}}
-            </textarea>
+            <div style="height:400px; width:100%;" >
+                <p ng-repeat="message in messages">
+                    {{message}}
+                </p>
+
+            </div>
 
             <input class="form-control">
         </div>
