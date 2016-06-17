@@ -9,8 +9,9 @@
         </div>
 
         <div class="panel-body">
+            <input class="form-control" ng-model="search">
+            <br>
             <ul class="list-group">
-                <li class="list-group-item-heading"><input class="form-control" ng-model="search"></li>
                 <li class="list-group-item" ng-repeat="user in main.users | filter:search">{{user.firstName}}
                     {{user.lastName}} {{user.email}}
                 </li>
@@ -28,9 +29,11 @@
         </div>
         <div class="panel-body">
             <div style="height:400px; width:100%;">
-                <p ng-repeat="message in main.messages">
-                    {{message.user}} > {{message.message}}
-                </p>
+                <div ng-repeat="message in main.messages">
+                        {{message.user}}
+                        <small>{{message.postedAt | date:'hh:mm'}}</small>
+                        > {{message.message}}
+                </div>
 
             </div>
 

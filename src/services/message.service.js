@@ -16,6 +16,7 @@
         })
       }
       this.sendMessage = function (message) {
+        message.postedAt = new Date()
         return $http.post(baseUrl, message)
       }
     }
