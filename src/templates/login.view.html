@@ -3,16 +3,23 @@
     <div class="col-sm-4 col-sm-offset-4 well well-sm">
         <h4>Login</h4>
         <hr>
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        <form name="loginForm" novalidate>
+            <div class="form-group" ng-class="(loginForm.email.$untouched || loginForm.email.$valid) ? '' : 'has-error'">
+                <label for="email">Email address</label>
+                <input ng-model="email" type="email" class="form-control" name="email" id="email" placeholder="Email" required="true">
+                <div ng-show="loginForm.email.$touched">
+                    <span class="help-block" ng-show="loginForm.email.$error.required">Tell us your email.</span>
+                    <span class="help-block" ng-show="loginForm.email.$error.email">This is not a valid email.</span>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div class="form-group" ng-class="(loginForm.password.$untouched || loginForm.password.$valid) ? '' : 'has-error'">
+                <label for="password">Password</label>
+                <input ng-model="password" type="password" class="form-control" id="password"  name="password" placeholder="Password" required="true">
+                <div ng-show="loginForm.password.$touched">
+                    <span class="help-block" ng-show="loginForm.password.$error.required">Password is required !</span>
+                </div>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" ng-disabled="!loginForm.$valid">Submit</button>
         </form>
     </div>
 </div>
