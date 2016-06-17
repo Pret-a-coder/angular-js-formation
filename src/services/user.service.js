@@ -30,13 +30,19 @@
           return false
         })
       }
+      this.getUsers = function () {
+        return $http.get(baseUrl).then(function (data) {
+          return data.data
+        })
+      }
+
       this.isLoggedIn = function () {
         return !!self.loggedIn
       }
       this.getLoggedInUser = function () {
         return self.loggedIn
       }
-      this.logou = function () {
+      this.logout = function () {
         delete self.loggedIn
       }
     }

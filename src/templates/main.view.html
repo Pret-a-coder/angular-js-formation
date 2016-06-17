@@ -10,10 +10,7 @@
 
         <div class="panel-body">
             <ul class="list-group">
-                <li class="list-group-item">Riri</li>
-                <li class="list-group-item">Fifi</li>
-                <li class="list-group-item">Toto</li>
-
+                <li class="list-group-item" ng-repeat="user in main.users">{{user.firstName}} {{user.lastName}} {{user.email}}</li>
             </ul>
 
         </div>

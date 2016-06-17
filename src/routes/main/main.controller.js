@@ -1,10 +1,14 @@
 (function () {
   'use strict'
-  angular.module('demoApp').controller('MainController', [ '$scope', '$interval', 'MessageService', function ($scope, $interval, MessageService) {
+  angular.module('demoApp').controller('MainController', [ '$scope', '$interval', 'MessageService', 'UserService', function ($scope, $interval, MessageService, UserService) {
     var self = this
 
     function init () {
+      getMessages()
       self.interval = $interval(getMessages, 5000)
+      UserService.getUsers().then(function (users) {
+        self.users = users
+      })
     }
 
     function getMessages () {
