@@ -4,6 +4,7 @@ require('angular-route')
 var module = angular.module('demoApp', [ 'ngRoute' ])
 
 require('./routes/main/main.controller')
+require('./services/message.service')
 
 module.config(function ($routeProvider) {
   $routeProvider.when('/', {

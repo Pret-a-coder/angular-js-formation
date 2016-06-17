@@ -1,10 +1,18 @@
 (function () {
   'use strict'
-  angular.module('demoApp').controller('MainController', [ function () {
-    this.messages = [ '> Bienvenue dans le chat', '@Riri: Quelqu\'un a vu Loulou ? ' ]
+  angular.module('demoApp').controller('MainController', [ 'MessageService', function (MessageService) {
+    var self = this
+
+    function init () {
+      MessageService.getMessages().then(function (messages) {
+        self.messages = messages
+      })
+    }
+
+    init()
     this.sendMessage = function () {
-      this.messages.push('@Anonymous: ' + this.newMessage)
-      this.newMessage = ''
+      MessageService.sendMessage({ user: '@Anonymous', message: self.newMessage }).then(init)
+      self.newMessage = ''
     }
   } ])
 })()
