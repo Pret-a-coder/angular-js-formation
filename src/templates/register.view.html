@@ -6,7 +6,7 @@
         <form name="registerForm">
             <div class="form-group" ng-class="(registerForm.email.$untouched || registerForm.email.$valid) ? '' : 'has-error'">
                 <label for="email">Email address</label>
-                <input ng-model="email" type="email" class="form-control" name="email" id="email" placeholder="Email" required="true">
+                <input ng-model="user.email" type="email" class="form-control" name="email" id="email" placeholder="Email" required="true">
                 <div ng-show="registerForm.email.$touched">
                     <span class="help-block" ng-show="registerForm.email.$error.required">Tell us your email.</span>
                     <span class="help-block" ng-show="registerForm.email.$error.email">This is not a valid email.</span>
@@ -14,27 +14,27 @@
             </div>
             <div class="form-group">
                 <label for="firstname">First name</label>
-                <input class="form-control" id="firstname" placeholder="First name">
+                <input ng-model="user.firstname" class="form-control" id="firstname" placeholder="First name">
             </div>
             <div class="form-group">
                 <label for="lastname">Last name</label>
-                <input class="form-control" id="lastname" placeholder="Last name">
+                <input ng-model="user.lastname" class="form-control" id="lastname" placeholder="Last name">
             </div>
             <div class="form-group" ng-class="(registerForm.pwd1.$untouched || registerForm.pwd1.$valid) ? '' : 'has-error'">
                 <label for="pwd1">Password</label>
-                <input ng-model="pwd1" type="password" class="form-control" id="pwd1"  name="pwd1" placeholder="Password" required="true">
+                <input ng-model="user.pwd1" type="password" class="form-control" id="pwd1"  name="pwd1" placeholder="Password" required="true">
                 <div ng-show="registerForm.pwd1.$touched">
                     <span class="help-block" ng-show="registerForm.pwd1.$error.required">Password is required !</span>
                 </div>
             </div>
             <div class="form-group" ng-class="(registerForm.pwd2.$untouched || registerForm.pwd2.$valid) ? '' : 'has-error'">
                 <label for="pwd2">Password</label>
-                <input ng-model="pwd2" type="password" class="form-control" id="pwd2"  name="pwd2" placeholder="Password" required="true">
+                <input ng-model="user.pwd2" type="password" class="form-control" id="pwd2"  name="pwd2" placeholder="Password" required="true">
                 <div ng-show="registerForm.pwd2.$touched">
                     <span class="help-block" ng-show="registerForm.pwd2.$error.required">Password is required !</span>
                 </div>
             </div>
-            <button type="submit" class="btn btn-default" ng-disabled="!registerForm.$valid">Submit</button>
+            <button type="submit" class="btn btn-default" ng-disabled="!registerForm.$valid" ng-click="register.register(user)">Submit</button>
         </form>
     </div>
 </div>

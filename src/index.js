@@ -7,10 +7,12 @@ require('./routes/main/main.controller')
 require('./routes/login/login.controller')
 require('./routes/register/register.controller')
 require('./services/message.service')
+require('./services/user.service')
 
-module.config(['$routeProvider', 'MessageServiceProvider', function ($routeProvider, MessageServiceProvider) {
+module.config(['$routeProvider', 'MessageServiceProvider', 'UserServiceProvider', function ($routeProvider, MessageServiceProvider, UserServiceProvider) {
 
   MessageServiceProvider.setBaseUrl('https://gentle-brushlands-6591.herokuapp.com/api')
+  UserServiceProvider.setBaseUrl('https://gentle-brushlands-6591.herokuapp.com/api')
 
   $routeProvider.when('/', {
     templateUrl: '/templates/main.view.html',
