@@ -12,7 +12,7 @@
             <input class="form-control" ng-model="search">
             <br>
             <ul class="list-group">
-                <li ng-repeat="user in main.users | filter:search" class="list-group-item">{{user.firstName}} {{user.lastName}}</li>
+                <li ng-repeat="user in main.users | filter:search" class="list-group-item">{{user.firstName}} {{user.lastName}}  <avatar user="user"></avatar> </li>
             </ul>
 
         </div>

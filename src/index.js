@@ -9,6 +9,8 @@ require('./routes/login/login.controller')
 require('./routes/register/register.controller')
 require('./services/user.service')
 require('./services/message.service')
+require('./filters/initial.filter')
+require('./directives/avatar.directive')
 
 module.config(['$routeProvider', 'MessageServiceProvider', 'UserServiceProvider', function ($routeProvider, MessageServiceProvider, UserServiceProvider) {
 
