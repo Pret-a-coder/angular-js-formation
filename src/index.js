@@ -1,16 +1,19 @@
 var angular = require('angular')
 require('angular-route')
+require('ngstorage')
 
-var module = angular.module('demoApp', [ 'ngRoute' ])
+var module = angular.module('demoApp', [ 'ngRoute', 'ngStorage' ])
 
 require('./routes/main/main.controller')
 require('./routes/login/login.controller')
 require('./routes/register/register.controller')
+require('./services/user.service')
 require('./services/message.service')
 
-module.config(['$routeProvider', 'MessageServiceProvider', function ($routeProvider, MessageServiceProvider) {
+module.config(['$routeProvider', 'MessageServiceProvider', 'UserServiceProvider', function ($routeProvider, MessageServiceProvider, UserServiceProvider) {
 
   MessageServiceProvider.setBaseUrl('https://gentle-brushlands-6591.herokuapp.com/api')
+  UserServiceProvider.setBaseUrl('https://gentle-brushlands-6591.herokuapp.com/api')
 
   $routeProvider.when('/', {
     templateUrl: '/templates/main.view.html',
