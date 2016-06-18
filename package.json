@@ -15,7 +15,8 @@
   "dependencies": {
     "angular": "^1.5.7",
     "angular-route": "^1.5.7",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "ngstorage": "^0.3.10"
   },
   "devDependencies": {
     "live-reload": "^1.1.0",
