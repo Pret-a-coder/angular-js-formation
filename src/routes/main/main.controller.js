@@ -9,6 +9,7 @@
       UserService.getUsers().then(function (users) {
         self.users = users
       })
+      self.loggedIn = UserService.getLoggedInUser()
     }
 
     function getMessages () {
@@ -24,7 +25,7 @@
     })
 
     this.sendMessage = function () {
-      MessageService.sendMessage({ user: '@Anonymous', message: self.newMessage }).then(getMessages)
+      MessageService.sendMessage({ user: self.loggedIn, message: self.newMessage }).then(getMessages)
       self.newMessage = ''
     }
   } ])

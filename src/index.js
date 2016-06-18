@@ -8,6 +8,8 @@ require('./routes/login/login.controller')
 require('./routes/register/register.controller')
 require('./services/message.service')
 require('./services/user.service')
+require('./directives/user.directive')
+require('./filters/initials.filter')
 
 module.config(['$routeProvider', 'MessageServiceProvider', 'UserServiceProvider', function ($routeProvider, MessageServiceProvider, UserServiceProvider) {
 

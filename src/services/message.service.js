@@ -11,7 +11,7 @@
 
     var MessageService = function ($q, $timeout, $http) {
       this.getMessages = function () {
-        return $http.get(baseUrl).then(function (data) {
+        return $http.get(baseUrl, {params: {populate: {path: 'user', ref:'user'}}}).then(function (data) {
           return data.data
         })
       }

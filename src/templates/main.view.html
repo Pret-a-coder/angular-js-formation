@@ -14,6 +14,7 @@
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="user in main.users | filter:search">{{user.firstName}}
                     {{user.lastName}} {{user.email}}
+                    <user user="user"></user>
                 </li>
             </ul>
 
@@ -30,9 +31,9 @@
         <div class="panel-body">
             <div style="height:400px; width:100%;">
                 <div ng-repeat="message in main.messages">
-                        {{message.user}}
-                        <small>{{message.postedAt | date:'hh:mm'}}</small>
-                        > {{message.message}}
+                    <user user="message.user"></user>
+                    <small>{{message.postedAt | date:'hh:mm'}}</small>
+                    > {{message.message}}
                 </div>
 
             </div>
